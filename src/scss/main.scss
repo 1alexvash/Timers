@@ -1,0 +1,15 @@
+@import "reset";
+@import "responsive";
+
+.App {
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 20px;
+  width: 360px;
+  margin: auto;
+  @include responsive(480px) {
+    width: 100%;
+  }
+  @import "components/Navigation";
+  @import "components/Timer";
+  @import "components/Stopwatch";
+}

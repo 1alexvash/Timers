@@ -1,0 +1,68 @@
+.Timer {
+  .time-left {
+    margin: 80px 0 100px;
+    text-align: center;
+    font-size: 24px;
+  }
+  .inputs {
+    margin: 80px 0 100px;
+    border: 2px solid rgba(#333, 0.5);
+    display: flex;
+    box-shadow: 1px 2px 10px rgba(#333, 0.8);
+    .input {
+      padding: 8px;
+    }
+  }
+  .inputs :nth-child(2) {
+    border-left: 2px solid #333;
+    border-right: 2px solid #333;
+  }
+  .controllers {
+    margin: 20px 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    .start {
+      cursor: pointer;
+      border: 2px solid black;
+      background: linear-gradient(black, darken(red, 20%), red);
+      color: white;
+      width: 35%;
+      padding: 8px 20px;
+      transition: 0.3s;
+      &:hover {
+        border-radius: 10px;
+      }
+    }
+    .start:disabled {
+      background: linear-gradient(darken(grey, 20%), grey);
+    }
+    .start:focus {
+      outline: 2px solid deepskyblue;
+    }
+    .reset,
+    .pause {
+      cursor: pointer;
+      border: 2px solid black;
+      background: linear-gradient(black, darken(red, 20%), red);
+      color: white;
+      width: 35%;
+      padding: 8px 20px;
+      transition: 0.3s;
+      &:hover {
+        border-radius: 10px;
+      }
+    }
+    .sound {
+      cursor: pointer;
+      background: lighten(lightgray, 15%);
+      transition: 0.7s;
+      &:hover {
+        background: lighten(lightgray, 10%);
+      }
+      img {
+        width: 40px;
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+.Navigation {
+  padding: 20px;
+  padding-top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  .tab {
+    cursor: pointer;
+    padding: 8px 20px;
+    transition: 0.7s;
+    &:hover {
+      background: #555;
+      color: white;
+    }
+    &.active {
+      background: black;
+      color: white;
+    }
+  }
+}

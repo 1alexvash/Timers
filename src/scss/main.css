@@ -1,0 +1,243 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+input {
+  width: 100%;
+}
+
+.App {
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 20px;
+  width: 360px;
+  margin: auto;
+}
+
+@media (max-width: 480px) {
+  .App {
+    width: 100%;
+  }
+}
+
+.App .Navigation {
+  padding: 20px;
+  padding-top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.App .Navigation .tab {
+  cursor: pointer;
+  padding: 8px 20px;
+  -webkit-transition: 0.7s;
+  transition: 0.7s;
+}
+
+.App .Navigation .tab:hover {
+  background: #555;
+  color: white;
+}
+
+.App .Navigation .tab.active {
+  background: black;
+  color: white;
+}
+
+.App .Timer .time-left {
+  margin: 80px 0 100px;
+  text-align: center;
+  font-size: 24px;
+}
+
+.App .Timer .inputs {
+  margin: 80px 0 100px;
+  border: 2px solid rgba(51, 51, 51, 0.5);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-shadow: 1px 2px 10px rgba(51, 51, 51, 0.8);
+          box-shadow: 1px 2px 10px rgba(51, 51, 51, 0.8);
+}
+
+.App .Timer .inputs .input {
+  padding: 8px;
+}
+
+.App .Timer .inputs :nth-child(2) {
+  border-left: 2px solid #333;
+  border-right: 2px solid #333;
+}
+
+.App .Timer .controllers {
+  margin: 20px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.App .Timer .controllers .start {
+  cursor: pointer;
+  border: 2px solid black;
+  background: -webkit-gradient(linear, left top, left bottom, from(black), color-stop(#990000), to(red));
+  background: linear-gradient(black, #990000, red);
+  color: white;
+  width: 35%;
+  padding: 8px 20px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.App .Timer .controllers .start:hover {
+  border-radius: 10px;
+}
+
+.App .Timer .controllers .start:disabled {
+  background: -webkit-gradient(linear, left top, left bottom, from(#4d4d4d), to(grey));
+  background: linear-gradient(#4d4d4d, grey);
+}
+
+.App .Timer .controllers .start:focus {
+  outline: 2px solid deepskyblue;
+}
+
+.App .Timer .controllers .reset,
+.App .Timer .controllers .pause {
+  cursor: pointer;
+  border: 2px solid black;
+  background: -webkit-gradient(linear, left top, left bottom, from(black), color-stop(#990000), to(red));
+  background: linear-gradient(black, #990000, red);
+  color: white;
+  width: 35%;
+  padding: 8px 20px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.App .Timer .controllers .reset:hover,
+.App .Timer .controllers .pause:hover {
+  border-radius: 10px;
+}
+
+.App .Timer .controllers .sound {
+  cursor: pointer;
+  background: #f9f9f9;
+  -webkit-transition: 0.7s;
+  transition: 0.7s;
+}
+
+.App .Timer .controllers .sound:hover {
+  background: #ededed;
+}
+
+.App .Timer .controllers .sound img {
+  width: 40px;
+}
+
+.App .Stopwatch .pic {
+  width: 256px;
+  display: block;
+  margin: auto;
+}
+
+.App .Stopwatch .pic.active {
+  -webkit-animation: 5s zoomInAndOut linear infinite alternate;
+          animation: 5s zoomInAndOut linear infinite alternate;
+}
+
+@-webkit-keyframes zoomInAndOut {
+  from {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  40% {
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95);
+  }
+  to {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+  }
+}
+
+@keyframes zoomInAndOut {
+  from {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  40% {
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95);
+  }
+  to {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+  }
+}
+
+.App .Stopwatch .time-passed {
+  font-family: monospace;
+  margin: 20px 0;
+  font-size: 36px;
+  text-align: center;
+}
+
+.App .Stopwatch .time-passed .letter {
+  font-size: 24px;
+}
+
+.App .Stopwatch .controllers {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.App .Stopwatch .controllers .start,
+.App .Stopwatch .controllers .restart {
+  cursor: pointer;
+  margin: auto;
+  display: block;
+  padding: 8px 20px;
+  background: #000;
+  color: white;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  font-size: 24px;
+}
+
+.App .Stopwatch .controllers .restart {
+  background: #333;
+}
+
+.App .Stopwatch .controllers .restart:hover {
+  background: #000;
+}
+
+.App .Stopwatch .controllers .restart:disabled {
+  cursor: auto;
+  background: #777;
+}

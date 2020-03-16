@@ -1,26 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Fragment } from "react";
+import Navigation from "./components/Navigation/Navigation";
+import Stopwatch from "./components/Stopwatch/Stopwatch";
+import Timer from "./components/Timer/Timer";
+import "./scss/main.css";
 
-function App() {
+import { StoreProvider, useStoreState } from "easy-peasy";
+
+import store from "./store";
+
+const App = () => {
+  const activeTab = useStoreState(state => state.navigation.activeTab);
+  const page = activeTab === "timer" ? <Timer /> : <Stopwatch />;
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Fragment>
+      <div className="App">
+        <Navigation />
+        {page}
+      </div>
+    </Fragment>
   );
-}
+};
 
-export default App;
+export default () => (
+  <StoreProvider store={store}>
+    <App />
+  </StoreProvider>
+);
