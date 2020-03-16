@@ -6,7 +6,7 @@ import stopwatchImg from "../../images/stopwatch.png";
 
 const Stopwatch = () => {
   const [active, setActive] = useState(false);
-  const [seconds, setSeconds] = useState(55);
+  const [seconds, setSeconds] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
